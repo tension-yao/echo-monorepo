@@ -32,6 +32,12 @@
   "workspaces": [
     "packages/**"
   ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "lint-staged": {
     "*.{ts,tsx}": [
       "node --max_old_space_size=8192 ./node_modules/.bin/eslint --fix --color --cache --quiet",
